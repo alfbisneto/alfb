@@ -28,7 +28,7 @@ public class Pais {
 		this.id = id;
 		}
 	
-	public String getnome() {
+	public String getNome() {
 		return nome;
 		}
 	
