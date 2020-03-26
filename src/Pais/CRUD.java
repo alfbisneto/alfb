@@ -25,12 +25,12 @@ public class CRUD {
 		String sqlInsert = "INSERT INTO Paises(id, nome, populacao, area) VALUES (?, ?, ?, ?)";
 		try (Connection conn = obtemConexao();PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
 			stm.setInt(1, pais.getId());
-			stm.setString(2, pais.getnome());
+			stm.setString(2, pais.getNome());
 			stm.setLong(3, pais.getPop());
 			stm.setDouble(4, pais.getArea());
 			stm.execute();
 			conn.close();
-			System.out.println(pais.getnome() + ", " + pais.getPop() + ", " + pais.getArea());
+			System.out.println(pais.getNome() + ", " + pais.getPop() + ", " + pais.getArea());
 		} 
 		catch(SQLException e){
 			e.printStackTrace();
@@ -40,7 +40,7 @@ public class CRUD {
 	public static void atualizar(Pais atualizado) {
 		String sqlUpdate = "UPDATE Paises SET nome=?, populacao=?, area=? WHERE nome=?";
 		try (Connection conn = obtemConexao();PreparedStatement stm = conn.prepareStatement(sqlUpdate);) {
-			stm.setString(1, atualizado.getnome());
+			stm.setString(1, atualizado.getNome());
 			stm.setLong(2, atualizado.getPop());
 			stm.setDouble(3, atualizado.getArea());
 			stm.setString(4, "Chile");
