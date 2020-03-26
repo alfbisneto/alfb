@@ -112,7 +112,7 @@ public class Pais {
 		area = to.getArea();
 	}
 	
-	public void menorArea() {
+	public void getMenorA() {
 		TO to = Service.getMenorA();
 		id = to.getId();
 		nome = to.getNome();

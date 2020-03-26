@@ -31,40 +31,40 @@ public class PaisTest {
 	
 	@Test
 	public void test01Criar() {
-	System.out.println("Criar");
-	CRUD.criar(original);
-	id = original.getId();
-	System.out.println(id);
-	copia.setId(id);
-	assertEquals(original, copia);
+		System.out.println("Criar");
+		CRUD.criar(original);
+		id = original.getId();
+		System.out.println(id);
+		copia.setId(id);
+		assertEquals(original, copia);
 	}
 	
 	@Test
-	public void test02Atualizar() {
-	System.out.println("Atualizar");
-	original.setPop((10));
-	copia.setPop(10);
-	CRUD.atualizar(original);
-	assertEquals(original, copia);
+		public void test02Atualizar() {
+		System.out.println("Atualizar");
+		original.setPop((10));
+		copia.setPop(10);
+		CRUD.atualizar(original);
+		assertEquals(original, copia);
 	}
 	
 	@Test
 	public void test03Excluir() {
-	System.out.println("Excluir");
-	CRUD.excluir("Chile");
-	original = CRUD.carregar("Chile");
-	Pais nada = new Pais(0, null, 0, 0);
-	assertEquals(original, nada);
+		System.out.println("Excluir");
+		CRUD.excluir("Chile");
+		original = CRUD.carregar("Chile");
+		Pais nada = new Pais(0, null, 0, 0);
+		assertEquals(original, nada);
 	}
 	
 	@Test
 	public void test04Maior() {
-	System.out.println("Maior pop");
-	original.setPop(10);
-	copia.setPop(10);
-	CRUD.criar(original);
-	copia = CRUD.getMaiorP(copia);
-	assertEquals(original, copia);
+		System.out.println("Maior pop");
+		original.setPop(10);
+		copia.setPop(10);
+		CRUD.criar(original);
+		copia = CRUD.getMaiorP(copia);
+		assertEquals(original, copia);
 	}
 	
 	@Test
