@@ -80,5 +80,43 @@ public class Pais {
 		if (area != other.area) 
 			return false;
 		return true;
-	}	
+	}
+	
+	public void criar() {
+		TO to = new TO(id, nome, populacao, area);
+		Service.criar(to);
+	}
+	
+	public void atualizar() {
+		TO to = new TO(id, nome, populacao, area);
+		Service.atualizar(id, to);
+	}
+	
+	public void excluir() {
+		Service.excluir(id);
+	}
+	
+	public void carregar() {
+		TO to = Service.carregar(id);
+		id = to.getId();
+		nome = to.getNome();
+		populacao = to.getPop();
+		area = to.getArea();
+	}
+	
+	public void getMaiorP() {
+		TO to = Service.getMaiorP();
+		id = to.getId();
+		nome = to.getNome();
+		populacao = to.getPop();
+		area = to.getArea();
+	}
+	
+	public void menorArea() {
+		TO to = Service.getMenorA();
+		id = to.getId();
+		nome = to.getNome();
+		populacao = to.getPop();
+		area = to.getArea();
+	}
 }

@@ -54,7 +54,7 @@ public class CRUD {
 		}
 	
 	public static void excluir(String nome) {
-		String sqlDelete = "DELETE FROM Paises WHERE Nome = ?";
+		String sqlDelete = "DELETE FROM Paises WHERE nome = ?";
 		try (Connection conn = obtemConexao();PreparedStatement stm = conn.prepareStatement(sqlDelete);) {
 			stm.setString(1, nome);
 			stm.execute();
@@ -125,7 +125,7 @@ public class CRUD {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Não foi possível encontrar");
+		System.out.println("Não achou");
 		return pais;
 	}
 	
@@ -139,7 +139,7 @@ public class CRUD {
 						paises[i] = new Pais(rs.getInt(1), rs.getString(2), rs.getLong(3), rs.getDouble(4));
 					}
 					else
-						System.out.println("Nao foi possivel ler o pais " + i);
+						System.out.println("Não achou");
 				}
 				return paises;
 			}

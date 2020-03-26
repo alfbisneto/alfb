@@ -31,7 +31,7 @@ public class PaisTest {
 	
 	@Test
 	public void test01Criar() {
-	System.out.println("criar");
+	System.out.println("Criar");
 	CRUD.criar(original);
 	id = original.getId();
 	System.out.println(id);
@@ -78,7 +78,7 @@ public class PaisTest {
 	}
 	
 	@Test
-	public void test06() {
+	public void test06Vetor() {
 		Pais v[] = CRUD.vetor();
 		Pais pais[] = {new Pais(1, "Brasil", 209, 8511000.0), new Pais(2, "EUA", 307, 9834000.0), new Pais(3, "Argentina", 44, 2780000.0)};
 		assertArrayEquals(pais, v);
